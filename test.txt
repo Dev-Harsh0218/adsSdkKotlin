@@ -1,0 +1,182 @@
+//object AdsSdkClient {
+//    private var interstitialAd by mutableStateOf<InterstitialAdData?>(null)
+//    private var displayId by mutableStateOf<String?>(null)
+//    private var bannerAd by mutableStateOf<BannerAdData?>(null)
+//    @JvmStatic
+//    fun initialize(
+//        context: Context,
+//        appName: String,
+//        appApkKey: String,
+//        packageName: String,
+//        appVersion: String
+//    ) {
+//        AdsSdkInitializer.initialize(
+//            context = context,
+//            appName = appName,
+//            appApkKey = appApkKey,
+//            packageName = packageName,
+//            appVersion = appVersion
+//        )
+//    }
+//
+//    @JvmStatic
+//    fun showInterstitialAd(displayId: String) {
+//        this.displayId = displayId
+//        AdsSdkInitializer.triggerInterstitialAd(
+//            onSuccess = { response -> interstitialAd = response.data },
+//            onError = { this.displayId = null }
+//        )
+//    }
+//
+//    @JvmStatic
+//    fun showBannerAd(displayId: String) {
+//        this.displayId = displayId
+//        AdsSdkInitializer.triggerBannerAd(
+//            onSuccess = { response -> bannerAd = response.data },
+//            onError = { this.displayId = null }
+//        )
+//    }
+//    @Composable
+//    fun InterstitialAdContainer(
+//        modifier: Modifier = Modifier,
+//        displayId: String) {
+//        if (this.displayId == displayId) {
+//            interstitialAd?.let {
+//                InterstitialAdScreen(
+//                    adData = it,
+//                    onAdLoaded = { /* Internal handling */ },
+//                    onDismiss = {
+//                        interstitialAd = null
+//                        this.displayId = null
+//                    },
+//                    onAdClicked = { /* Internal handling */ },
+//                    onError = {
+//                        interstitialAd = null
+//                        this.displayId = null
+//                    }
+//                )
+//            }
+//        }
+//    }
+//
+//    @Composable
+//    fun BannerAdContainer(
+//        modifier: Modifier = Modifier,
+//        height : Dp = 50.dp,
+//        width : Dp = Dp.Unspecified,
+//        displayId: String,
+//    ){
+//        if(this.displayId == displayId){
+//            bannerAd?.let {
+//                BannerAdScreen(
+//                    width = width,
+//                    height = height,
+//                    adData = it,
+//                    onAdLoaded = { /*TODO*/ },
+//                    onAdClicked = { /*TODO*/ },
+//                    onError = {
+//                        bannerAd = null
+//                        this.displayId = null
+//                    },
+//                    onDismiss = { /*TODO*/}
+//                )
+//            }
+//        }
+//    }
+//}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//        setContent {
+//            AdsNativeSdkTheme {
+//                Scaffold(
+//                    modifier = Modifier.fillMaxSize()
+//                ) { innerPadding ->
+//                    Box(modifier = Modifier.fillMaxSize()) {
+//                        Column(
+//                            modifier = Modifier
+//                                .fillMaxSize()
+//                                .padding(top = 0.dp)
+//                        ) {
+//                            Box(modifier = Modifier.weight(0.1f)) {
+//                                AdsSDKClient.BannerAdContainer(
+//                                    content = { },
+//                                    modifier = Modifier.fillMaxSize(),
+//                                    adHeight = 100.dp,
+//                                    adAlignment = Alignment.TopCenter
+//                                )
+//                            }
+//
+//                            Box(
+//                                modifier = Modifier
+//                                    .weight(0.9f)
+//                                    .padding(innerPadding)
+//                            ) {
+//                                Column(
+//                                    horizontalAlignment = Alignment.CenterHorizontally,
+//                                    verticalArrangement = Arrangement.Center,
+//                                    modifier = Modifier.fillMaxSize()
+//                                ) {
+//                                    Greeting(name = "Android")
+//                                    Button(
+//                                        onClick = { AdsSDKClient.triggerInterstitialAd() },
+//                                        modifier = Modifier.padding(16.dp)
+//                                    ) {
+//                                        Text("Show Ad Interstitial Ad")
+//                                    }
+//                                    Button(
+//                                        onClick = { AdsSDKClient.triggerPopupAd() },
+//                                        modifier = Modifier.padding(16.dp)
+//                                    ) {
+//                                        Text("Show Ad Popup Ad")
+//                                    }
+//                                }
+//                            }
+//                        }
+//                        AdsSDKClient.PopupAdContainer(content = {}, loaderSize = 30.dp, popupWidth = 300.dp, popupHeight = 400.dp)
+//                        AdsSDKClient.InterstitialAdContainer(content = {})
+//                    }
+//                }
+//            }
+//        }

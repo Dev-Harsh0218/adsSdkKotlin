@@ -1,0 +1,4 @@
+## Public API
+#-keep class com.example.adsdk.AdsSDKClient { *; }
+#-keep class com.example.adsdk.presentation.ui.** { *; }
+#-keepattributes *Annotation*
